@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="template.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    </head>
+    <body>
+        <div id="navBar"></div>
+
+        <div id="botones">
+            <img id="imagenGuardar" src="../imagenes/guardar.png"></img>
+            <img id="imagenProgramar" src="../imagenes/programar.png"></img>
+            <img id="imagenCopiar" @click="CopiarTexto()" src="../imagenes/copiar.png"></img>
+            <img id="imagenLimpiar" @click="LimpiarTexto()" src="../imagenes/limpiar.png"></img>
+        </div>
+
+        <div id="contenedorNota">
+            <div id="textoNotaDiv">
+                <textarea v-model="textoArea" id="textoNota" type="text" placeholder="Empieza a escribir tu nota aqui.." @input="UsuarioEscribiendo()"></textarea>
+            </div>
+            <div id="caracteresActuales" :class="{ rojo: CARACTERES_PERMITIDOS < 0, gris: CARACTERES_PERMITIDOS > -1 }">
+               Caracteres: {{ CARACTERES_PERMITIDOS }}
+            </div>
+            <div id="estadoActual" v-model="estadoTexto" :class="{ rojo: ESTADO == 0, verde: ESTADO == 1 }">
+                {{ ESTADO_TEXTO }}
+             </div>
+        </div>
+
+        <script src="template.js"></script>
+    </body>
+</html>
