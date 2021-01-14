@@ -10,7 +10,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `ultranotes` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
 CREATE USER 'kevin'@'localhost' IDENTIFIED by 'ultranotes';
-CREATE USER 'ivan'@'localhost' IDENTIFIED by 'password';
+CREATE USER 'ivan'@'localhost' IDENTIFIED by 'ultranotes';
 GRANT USAGE ON *.* TO 'kevin'@'localhost';
 GRANT USAGE ON *.* TO 'ivan'@'localhost';
 
