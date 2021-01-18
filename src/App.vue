@@ -1,30 +1,30 @@
 <template>
-  <h1>LLIBRERIA</h1>
-  <!-- <div id="nav">
-    <router-link to="/">Inici</router-link>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
-  <hr />
-  <router-view /> -->
+  <router-view/>
 </template>
 
 <style>
-body {
-  background-color: rgb(173, 31, 255);
-  color: white;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-#app {
+#nav {
   padding: 30px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 #nav a {
   font-weight: bold;
-  text-decoration: none;
-  color: white;
+  color: #2c3e50;
 }
 
-h1 {
-  font-size: 3em;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
