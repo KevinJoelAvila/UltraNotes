@@ -1,6 +1,6 @@
 <template>
     <div id="NavBar">
-
+aaa
     </div>
 </template>
 
@@ -14,8 +14,7 @@ export default {
 </script>
 
 <style scoped>
-/* Resetear todos los componentes de la web para que se quiten los espacios de los laterales y de arriba, para pegar elementos
-   bien encima de la pantalla y a los laterales */
+
 * {
     margin: 0;
     padding: 0;
@@ -31,5 +30,6 @@ export default {
     background-color: rgba(192, 27, 233, 0.507);
     width: 100%;
     height: 8vh;
+
 }
 </style>

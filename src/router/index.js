@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Index from '../views/Index.vue'
+import VistaLogin from '../views/Login.vue'
 
 const routes = [
   {
@@ -20,7 +21,13 @@ const routes = [
     path: '/index',
     name: 'Index',
     component: Index
+  },
+  {
+    path: '/empezar',
+    name: 'Empezar',
+    component: VistaLogin
   }
+
 ]
 
 const router = createRouter({

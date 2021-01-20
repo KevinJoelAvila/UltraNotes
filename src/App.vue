@@ -1,20 +1,31 @@
 <template>
-  <div id="nav">
-    <NavBar/>
-    <button><router-link to="/index">Index</router-link></button>
-  </div>
-  <router-view/>
+  
+      <Home/>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import Home from '@/views/Home.vue'
 
 export default {
-  components: NavBar
+  components: {
+    Home
+  }
 }
 </script>
 
 <style>
+/* Resetear todos los componentes de la web para que se quiten los espacios de los laterales y de arriba, para pegar elementos
+   bien encima de la pantalla y a los laterales */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,7 +35,7 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 #nav a {
@@ -35,4 +46,10 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+button {
+  border: 1px solid black;
+  padding: 2px;
+}
+
 </style>

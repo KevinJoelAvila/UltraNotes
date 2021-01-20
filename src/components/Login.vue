@@ -3,14 +3,14 @@
         <section>
             <div class="container">
                 <div class="user singinBx">
-                    <div class="imgBx"><img src="coverPage/10.png"></div>
+                    <div class="imgBx"><img src="../assets/notaregistro.png"></div>
                     <div class="formBx">
                         <form method="post">
                             <h2>Iniciar Sesion</h2>
                             <input type="text" name="" placeholder="Username">
                             <input type="password" name="" placeholder="Password">
                             <input type="submit" name="login" value="Login">
-                            <p class="signup">No tienes cuenta? <a id="a" href="#">Registrate.</a></p>
+                            <p class="signup">No tienes cuenta? <a id="a" >Registrate.</a></p>
                         </form>
                     </div>
                 </div>
@@ -22,10 +22,10 @@
                             <input type="password" name="" placeholder="Create Password">
                             <input type="password" name="" placeholder="Confirm Password">
                             <input type="submit" name="login" value="Login">
-                            <p class="signup">Ya tienes cuenta? <a id="af" href="#">Inicia Sesion.</a></p>
+                            <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </form>
                     </div>
-                    <div class="imgBx"><img src="coverPage/15.png"></div>
+                    <div class="imgBx"><img src="../assets/notalogin.jpeg"></div>
                 </div>
             </div>
         </section>
@@ -37,6 +37,24 @@ export default {
     name: 'VentanaLogin',
     data () {
 
+    }
+}
+
+function $(element){
+    return document.getElementById(element);
+}
+
+// Espera a cargar la pagina para leer los id de la vista
+window.onload = function (){
+    $("a").addEventListener("click", toggleForm, false);
+
+
+    $("af").addEventListener("click", toggleForm, false);
+
+    function toggleForm(){
+        var container = document.querySelector('.container');
+        container.classList.toggle('active');
+        console.log("funciona");
     }
 }
 </script>
