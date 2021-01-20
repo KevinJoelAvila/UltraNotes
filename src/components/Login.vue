@@ -40,22 +40,11 @@ export default {
     }
 }
 
-function $(element){
-    return document.getElementById(element);
-}
+
 
 // Espera a cargar la pagina para leer los id de la vista
 window.onload = function (){
-    $("a").addEventListener("click", toggleForm, false);
-
-
-    $("af").addEventListener("click", toggleForm, false);
-
-    function toggleForm(){
-        var container = document.querySelector('.container');
-        container.classList.toggle('active');
-        console.log("funciona");
-    }
+    
 }
 </script>
 

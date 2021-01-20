@@ -23,12 +23,13 @@ body {
 section
 {
     position: relative;
-    min-height: 100vh;
+    min-height: 90vh;
     /* background: #fee648; */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 section .container
@@ -80,7 +81,10 @@ section .container .user .formBx
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    
+    padding-left: 40px;
+    padding-right: 55px;
+    padding-top: 0;
     transition: 0.5s;
 }
 

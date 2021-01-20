@@ -7,7 +7,7 @@
       <button><router-link to="/empezar">Empezar</router-link></button>
     </div>
   </div>
-  <router-view/>
+  
 </template>
 
 <script>
