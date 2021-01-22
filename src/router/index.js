@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Index from '../views/Index.vue'
 import VistaLogin from '../views/Login.vue'
+import Editor from '../views/Editor.vue'
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     path: '/empezar',
     name: 'Empezar',
     component: VistaLogin
+  },
+  {
+    path: '/editor',
+    name: 'Editor',
+    component: Editor
   }
 
 ]

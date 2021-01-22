@@ -5,6 +5,10 @@
     </div>
     <div>
       <button><router-link to="/empezar">Empezar</router-link></button>
+
+      <!-- Lineas a quitar luego -->
+      <button><router-link to="/editor">Editor</router-link></button>
+
     </div>
   </div>
   
