@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import Index from '../views/Index.vue'
 import VistaLogin from '../views/Login.vue'
 import Editor from '../views/Editor.vue'
+import DashBoard from '../views/DashBoard.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/editor',
     name: 'Editor',
     component: Editor
+  },
+  {
+    path: '/dashboard',
+    name: 'DashBoard',
+    component: DashBoard
   }
 
 ]

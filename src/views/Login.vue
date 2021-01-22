@@ -1,6 +1,10 @@
 <template>
     <div id="log">
-        <NavBar/>
+        <NavBarGeneral>
+            <template v-slot:ruta>
+                <router-link to="/"><img src="../assets/notas2.png"/></router-link>
+            </template>
+        </NavBarGeneral>
         
         <VistaLogin/>
         
@@ -9,13 +13,13 @@
 
 <script>
 import VistaLogin from '@/components/Login.vue'
-import NavBar from '@/components/NavBar.vue'
+import NavBarGeneral from '@/components/NavBarGeneral.vue'
 
 export default {
     name: "Log",
     components: {
         VistaLogin,
-        NavBar
+        NavBarGeneral
     },
     mounted() {
         function $(element){

@@ -2,6 +2,8 @@
     <div id="contenedorNota">
         <slot name="botones"></slot>
         <slot name="editorTexto"></slot>
+        <slot name="notas"></slot>
+        <slot name="buscador"></slot>
     </div>
 </template>
 

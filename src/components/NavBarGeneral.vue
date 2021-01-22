@@ -3,7 +3,7 @@
         <slot name="contenidoIzquierda"></slot>
         <div id="contenidoCentro">
             <div class="imagenTitulo">
-                <img src="../assets/notas2.png"/>
+                <slot name="ruta"></slot>
             </div>
             <div class="textoTitulo">
                 <p>UltraNotes</p>
