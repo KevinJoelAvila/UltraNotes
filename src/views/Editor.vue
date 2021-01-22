@@ -9,12 +9,19 @@
         </template>
       </NavBarGeneral>
       <ContenedorGeneral>
-        <template v-slot:botones id="botones">
+        <template v-slot:editorTexto>
+          <div id="contenedorNota">
+            <div id="textoNotaDiv">
+                <textarea v-model="textoArea" id="textoNota" type="text" placeholder="Empieza a escribir tu nota aqui.." @input="UsuarioEscribiendo()"></textarea>
+            </div>
+          </div>
+        </template>
+        <template v-slot:botones>
           <div id="botones">
             <img id="imagenGuardar" src="../assets/guardar.png"/>
             <img id="imagenProgramar" src="../assets/programar.png"/>
-            <img id="imagenCopiar" @click="CopiarTexto()" src="../assets/copiar.png"/>
-            <img id="imagenLimpiar" @click="LimpiarTexto()" src="../assets/limpiar.png"/>
+            <img id="imagenCopiar" src="../assets/copiar.png"/>
+            <img id="imagenLimpiar" src="../assets/limpiar.png"/>
           </div>
         </template>
       </ContenedorGeneral>
@@ -34,6 +41,8 @@ export default {
     ContenedorGeneral
   }
 }
+
+
 </script>
 
 <style scoped>
@@ -48,23 +57,42 @@ export default {
 
 #botones
 {
-    display: inline-block;
-    margin-left: 2vh;
-    margin-top: 20vh;
-    float: left;
-
-    max-width: 10vh;
-    max-height: 60vh;
-    width: 60vh;
+    margin-top: 2vh;
+    display: block;
+    width: auto;
     background-color: white;
     border-radius: 15px;
 }
 
+#textoNotaDiv
+{
+    background-color: white;
+    height: 72vh;
+    padding: 0 20px;
+    width: auto;
+    border-radius: 15px;
+}
+
+#textoNota
+{
+    width: 100%;
+    background-color: white;
+    height: 88%;
+    margin-top: 2vh;
+    float: left;
+    padding: 0 2px;
+    box-sizing: border-box;
+}
+
 #imagenGuardar, #imagenProgramar, #imagenCopiar, #imagenLimpiar
 {
-    margin-top: 2.5vh;
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
     height: 50px;
     width: 50px;
-    margin-bottom: 1.5vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
+
+
 </style>

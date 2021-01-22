@@ -1,9 +1,9 @@
 <template>
     <div id="contenedorNota">
-        <slot name="botones"></slot>
         <slot name="editorTexto"></slot>
         <slot name="notas"></slot>
         <slot name="buscador"></slot>
+        <slot name="botones"></slot>
     </div>
 </template>
 
@@ -30,20 +30,16 @@ export default {
 
 #contenedorNota
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
     background-color: rgb(228, 228, 228);
-    width: 97.5%;
-    height: 88vh;
+    width: auto;
+    height: auto;
     border-radius: 15px;
-    float: right;
-    margin-top: 2vh;
-    margin-right: 2vh;
-    padding: 0 2px;
-}
-
-@media screen and (max-width: 480px) {
-    #contenedorNota {
-      width: calc(100% - 10%);
-    }
+    margin: 2vh;
+    padding: 8px;
 }
 
 </style>
