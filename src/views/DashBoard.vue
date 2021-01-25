@@ -7,9 +7,8 @@
         </NavBarGeneral>
         <ContenedorGeneral>
             <template v-slot:notas>
-                <div>
-                    <div><img src="../assets/eliminar2.png"></div>
-                    <div><img src="../assets/nota2.png"></div>
+                <div class="notas">
+                    
                 </div>
             </template>
             <template v-slot:buscador>
@@ -34,5 +33,9 @@ export default {
 
 
 <style scoped>
+.notas{
+    display: flex;
+    justify-content: space-evenly;
 
+}
 </style>
