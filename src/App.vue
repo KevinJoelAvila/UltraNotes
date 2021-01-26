@@ -23,7 +23,13 @@ export default {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+
 }
+
+body{
+  background: #292b2c;
+}
+
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

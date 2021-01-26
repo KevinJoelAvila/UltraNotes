@@ -21,9 +21,11 @@ export default {
 
 <style scoped>
 .imgEliminar{
-    position:fixed;
-    margin-top: 2px;
-    margin-left: 60px;
+    position:relative;
+    top: 42px;
+    left: 2px;
+    float: left;
+    filter: grayscale(100%);
     /* margin-top: 10px; */
     /* z-index: 2; */
     /* display: block; */
@@ -31,14 +33,17 @@ export default {
 .imgNota{
     /* position: absolute; */
     /* z-index: 3; */
+    
+    padding: 0;
+    margin: 0;
 }
 
 .nota{
-    position: relative;
-    border: 2px solid black;
+    /* position: ; */
+    border: 2px solid white;
     padding: 0;
     margin: 2px;
-    width: 15%;
+    padding: 0;
 }
 
 </style>

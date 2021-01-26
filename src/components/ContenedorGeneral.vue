@@ -28,18 +28,22 @@ export default {
     background: transparent;
 }
 
+
+
 #contenedorNota
 {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-color: rgb(228, 228, 228);
-    width: auto;
-    height: auto;
+    width: 95%;
     border-radius: 15px;
     margin: 2vh;
     padding: 8px;
+    position: relative;
+    height: auto;
+    background: #1a1a1a;
+
 }
 
 </style>

@@ -7,11 +7,15 @@
         </NavBarGeneral>
         <ContenedorGeneral>
             <template v-slot:notas>
-                <Notas>
+                <div v-for="(numero,i) in list" :key="i">
+                    <Notas>
                     <template v-slot:titulo> 
-                        <p class="titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolorum iste eligendi ducimus </p>
+                        <p class="titulo">{{numero}}</p>
                     </template>
                 </Notas>
+                </div>
+                
+                
             </template>
         </ContenedorGeneral>
         
@@ -24,6 +28,7 @@
 import NavBarGeneral from '@/components/NavBarGeneral.vue'
 import ContenedorGeneral from '@/components/ContenedorGeneral.vue'
 import Notas from '@/components/Nota.vue'
+import axios from 'axios'
 
 export default {
     name: 'DashBoard',
@@ -31,18 +36,30 @@ export default {
         NavBarGeneral,
         ContenedorGeneral,
         Notas
+    },
+    data() {
+        return{
+            list: [],
+            error: ""
+        }
+        
+    },
+    created: function() {
+        this.getTitle();
+    },
+    methods: {
+        getTitle: function() {
+            axios.get('http://localhost/prueba/ultranotes/src/api/notas/nota.php').then((response) => {
+                this.list = response.data
+            }).catch(error => console.log(error));
+        }
     }
 }
 </script>
 
 
 <style scoped>
-.contenedor-notas{
-    display: flex;
-    justify-content: space-evenly;
-    
 
-}
 
 .titulo{
     position: fixed;
