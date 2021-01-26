@@ -9,11 +9,12 @@
             <template v-slot:notas>
                 <Notas>
                     <template v-slot:titulo> 
-                        <p>Hola</p>
+                        <p class="titulo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dolorum iste eligendi ducimus </p>
                     </template>
                 </Notas>
             </template>
         </ContenedorGeneral>
+        
         
     </div>
 </template>
@@ -39,6 +40,18 @@ export default {
 .contenedor-notas{
     display: flex;
     justify-content: space-evenly;
+    
 
+}
+
+.titulo{
+    position: fixed;
+    margin-left: 35px;
+    margin-top: -120px;
+    /* max-width: 10%; */
+    border: 1px solid red;
+    width: 10%;
+    max-width: 10%;
+    max-height: 14%;
 }
 </style>

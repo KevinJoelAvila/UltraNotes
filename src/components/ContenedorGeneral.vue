@@ -31,7 +31,7 @@ export default {
 #contenedorNota
 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
     background-color: rgb(228, 228, 228);
