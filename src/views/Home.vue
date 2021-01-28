@@ -20,7 +20,6 @@
       <div class="marcas">
         <p>Patrocinadores</p>
       </div>
-      <img class="nota" src="../assets/nota.png"/>
     </div>
   </div>
   
@@ -56,6 +55,10 @@ button{
 .nota{
   width: 110px;
   height: 110px;
+}
+
+.home{
+  
 }
 
 

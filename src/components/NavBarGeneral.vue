@@ -35,7 +35,7 @@ export default {
 
 #NavBar
 {
-    background: rgb(32, 2, 44);
+    background: rgba(155, 133, 133, 0.623);
     width: 100%;
     height: 8vh;
     display: flex;
@@ -65,13 +65,13 @@ export default {
 .neon {
     text-decoration: none;
     color: #fff;
-    transition: all 0.5s;
-    text-shadow: 0 0 1px #fff0aa, 0 0 5px #fee778, 0 0 10px #fee35e, 0 0 20px #fee259, 0 0 30px #fee157, 0 0 40px #fedb36, 0 0 70px #fedc38, 0 0 80px #fedc3b, 0 0 100px #fedd40, 0 0 150px #FEDE45;
+    /* transition: all 0.5s; */
+    /* text-shadow: 0 0 1px #fff0aa, 0 0 5px #fee778, 0 0 10px #fee35e, 0 0 20px #fee259, 0 0 30px #fee157, 0 0 40px #fedb36, 0 0 70px #fedc38, 0 0 80px #fedc3b, 0 0 100px #fedd40, 0 0 150px #FEDE45; */
 }
 
-p.neon:hover,
+/* p.neon:hover,
 p.neon:focus {
     color: #fff;
     text-shadow: 0 0 1px #c2a101, 0 0 5px #dcb601, 0 0 10px #e6be01, 0 0 20px #f0c701, 0 0 30px #facf01, 0 0 40px #fed308, 0 0 70px #fed512, 0 0 80px #fee35e, 0 0 100px #fee04f, 0 0 150px #FEDE45;
-}
+} */
 </style>
