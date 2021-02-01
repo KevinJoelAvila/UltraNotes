@@ -59,7 +59,9 @@ export default {
 
 
 <style scoped>
-
+.index{
+    background: transparent;
+}
 
 .titulo{
     position: fixed;

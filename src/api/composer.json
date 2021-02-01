@@ -1,0 +1,12 @@
+{
+    "name": "kevin/api",
+    "authors": [
+        {
+            "name": "KevinJoelAvila",
+            "email": "kevin.arj5@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.2"
+    }
+}

@@ -1,4 +1,5 @@
 <?php
+require('PDO.php');
 
 $servidor = "localhost";
 $usuari = "root";

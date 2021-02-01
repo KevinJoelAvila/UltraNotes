@@ -1,0 +1,8 @@
+#Options -Indexes
+#Options FollowSymLinks
+#Options SymLinksIfOwnerMatch
+#RewriteEngine On
+#RewriteBase /prueba/ultranotes
+#AddType application/x-httpd-php .php .phtml
+#RewriteCond %{REQUEST_URI} ^/?api/usuarios/
+#RewriteRule ^(.*) src/api/manager.php

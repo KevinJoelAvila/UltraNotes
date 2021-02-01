@@ -15,47 +15,21 @@ export default {
 <style>
 /* Resetear todos los componentes de la web para que se quiten los espacios de los laterales y de arriba, para pegar elementos
    bien encima de la pantalla y a los laterales */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    
-
-}
-
-body{
-background: rgb(132,94,194);
-background: -moz-linear-gradient(50deg, rgba(132,94,194,1) 0%, rgba(214,93,177,1) 14%, rgba(255,111,145,1) 44%, rgba(255,150,113,1) 64%, rgba(255,199,95,1) 85%, rgba(249,248,113,1) 100%);
-background: -webkit-linear-gradient(50deg, rgba(132,94,194,1) 0%, rgba(214,93,177,1) 14%, rgba(255,111,145,1) 44%, rgba(255,150,113,1) 64%, rgba(255,199,95,1) 85%, rgba(249,248,113,1) 100%);
-background: linear-gradient(50deg, rgba(132,94,194,1) 0%, rgba(214,93,177,1) 14%, rgba(255,111,145,1) 44%, rgba(255,150,113,1) 64%, rgba(255,199,95,1) 85%, rgba(249,248,113,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#845ec2",endColorstr="#f9f871",GradientType=1);
-}
-
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+
+  /*********/
+  /* FONDO */
+  /*********/
+  background-image:-webkit-gradient(linear, left bottom, right top, from(#6d327c), color-stop(#485DA6), color-stop(#00a1ba), color-stop(#00BF98), to(#36C486));
+  background-image:-webkit-linear-gradient(left bottom, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+  background-image:-o-linear-gradient(left bottom, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+  background-image:linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+
+  height: 100vh;
 }
 
-#nav {
-  /* padding: 30px; */
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-button {
-  border: 1px solid black;
-  padding: 2px;
-}
 
 </style>

@@ -58,7 +58,9 @@ button{
 }
 
 .home{
-  
+  /* background-color: red; */
+  padding: 0;
+  margin: 0;
 }
 
 

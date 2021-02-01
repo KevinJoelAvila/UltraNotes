@@ -5,23 +5,23 @@
                 <div class="user singinBx">
                     <div class="imgBx"><img src="../assets/notaregistro.png"></div>
                     <div class="formBx">
-                        <form method="post">
+                        <form method="GET">
                             <h2>Iniciar Sesion</h2>
-                            <input type="text" name="" placeholder="Username">
-                            <input type="password" name="" placeholder="Password">
-                            <input type="submit" name="login" value="Login">
+                            <input v-model="username" required type="text" name="" placeholder="Username">
+                            <input v-model="password" required type="password" name="" placeholder="Password">
+                            <input @click="confirmarUsuario()" type="submit" name="login" value="Login">
                             <p class="signup">No tienes cuenta? <a id="a" >Registrate.</a></p>
                         </form>
                     </div>
                 </div>
                 <div class="user singupBx">
                     <div class="formBx">
-                        <form method="post">
+                        <form method="GET">
                             <h2>Registrarse</h2>
-                            <input type="text" name="" placeholder="Username">
+                            <input  type="text" name="" placeholder="Username">
                             <input type="password" name="" placeholder="Create Password">
                             <input type="password" name="" placeholder="Confirm Password">
-                            <input type="submit" name="login" value="Login">
+                            <input @click="confirmarUsuario()" type="submit" name="register" value="Register">
                             <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </form>
                     </div>
@@ -29,14 +29,42 @@
                 </div>
             </div>
         </section>
+        <h1 v-if="error == null">HOLA</h1>
     </div>    
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'VentanaLogin',
     data () {
+        return {
+            username: "",
+            password: "",
+            error: ""
+        }
+    },
+    created() {
 
+    },
+    methods: {
+        confirmarUsuario() {
+            //Ruta de nuestra API
+            axios.get('http://localhost/prueba/ultranotes/src/api/usuarios/usuariosManager.php', {
+                //Con la propiedad params pasamos los datos a la API
+                params: {
+                    user: this.username,
+                    password: this.password
+                }
+            })
+            //Captura la respuesta
+            .then((response) => {
+                console.log(response.data)
+            })
+            //Captura los errores
+            .catch(error => console.log(error));
+        }
     }
 }
 
