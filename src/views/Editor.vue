@@ -39,6 +39,9 @@ export default {
   components: {
     NavBarGeneral,
     ContenedorGeneral
+  },
+  params: {
+    
   }
 }
 

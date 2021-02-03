@@ -8,14 +8,12 @@
         <ContenedorGeneral>
             <template v-slot:notas>
                 <div v-for="(numero,i) in list" :key="i">
-                    <Notas>
-                    <template v-slot:titulo> 
-                        <p class="titulo">{{numero}}</p>
-                    </template>
-                </Notas>
+                    <Notas :id="numero.id">
+                        <template v-slot:titulo> 
+                            <p class="titulo">{{numero}}</p>
+                        </template>
+                    </Notas>
                 </div>
-                
-                
             </template>
         </ContenedorGeneral>
         
@@ -49,7 +47,7 @@ export default {
     },
     methods: {
         getTitle: function() {
-            axios.get('http://localhost/prueba/ultranotes/src/api/notas/nota.php').then((response) => {
+            axios.get('http://localhost/prueba/ultranotes/src/api/notas/notas.php').then((response) => {
                 this.list = response.data
             }).catch(error => console.log(error));
         }
