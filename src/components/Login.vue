@@ -7,8 +7,9 @@
                     <div class="formBx">
                         <form method="GET">
                             <h2>Iniciar Sesion</h2>
-                            <input v-model="username" required type="text" name="" placeholder="Username">
-                            <input v-model="password" required type="password" name="" placeholder="Password">
+                            <input v-model="accion" type="hidden" value="log">
+                            <input v-model="user" required type="text" name="" placeholder="Username">
+                            <input v-model="pass" required type="password" name="" placeholder="Password">
                             <input @click="confirmarUsuario()" type="submit" name="login" value="Login">
                             <p class="signup">No tienes cuenta? <a id="a" >Registrate.</a></p>
                         </form>
@@ -18,9 +19,9 @@
                     <div class="formBx">
                         <form method="GET">
                             <h2>Registrarse</h2>
-                            <input  type="text" name="" placeholder="Username">
-                            <input type="password" name="" placeholder="Create Password">
-                            <input type="password" name="" placeholder="Confirm Password">
+                            <input v-model="name" type="text" name="" placeholder="Username">
+                            <input v-model="password" type="password" name="" placeholder="Create Password">
+                            <input v-model="confirmPassword" type="password" name="" placeholder="Confirm Password">
                             <input @click="confirmarUsuario()" type="submit" name="register" value="Register">
                             <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </form>
@@ -40,9 +41,15 @@ export default {
     name: 'VentanaLogin',
     data () {
         return {
-            username: "",
+            user: "",
+            pass: "",
+            name: "",
             password: "",
-            error: ""
+            confirmPassword: "",
+            accion: "",
+            error: "",
+            log: "login",
+            reg: "register"
         }
     },
     created() {
@@ -51,11 +58,29 @@ export default {
     methods: {
         confirmarUsuario() {
             //Ruta de nuestra API
-            axios.get('http://localhost/prueba/ultranotes/src/api/usuarios/usuariosManager.php', {
+            axios.get('http://localhost/prueba/ultranotes/src/api/usuarios/usuarios.php', {
                 //Con la propiedad params pasamos los datos a la API
                 params: {
-                    user: this.username,
-                    password: this.password
+                    user: this.user,
+                    pass: this.pass,
+                    accion: "login"
+                }
+            })
+            //Captura la respuesta
+            .then((response) => {
+                console.log(response.data)
+            })
+            //Captura los errores
+            .catch(error => console.log(error));
+        },
+        registrarUsuario() {
+            //Ruta de nuestra API
+            axios.get('http://localhost/prueba/ultranotes/src/api/usuarios/usuarios.php', {
+                //Con la propiedad params pasamos los datos a la API
+                params: {
+                    user: this.name,
+                    pass: this.password,
+                    accion: this.accion
                 }
             })
             //Captura la respuesta
