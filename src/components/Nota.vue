@@ -1,5 +1,5 @@
 <template>
-    <div class="nota">
+    <div class="nota" id="{{ id }}">
         <div class="imgEliminar">
             <img src="../assets/eliminar2.png">
         </div>
@@ -15,7 +15,8 @@ export default {
     name: "Nota",
     data () {
 
-    }
+    },
+    props: ["id"],
 }
 </script>
 
