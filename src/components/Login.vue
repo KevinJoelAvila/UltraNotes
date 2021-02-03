@@ -22,14 +22,14 @@
                             <input v-model="pass" type="password" name="" placeholder="Create Password">
                             <input v-model="confirmPassword" type="password" name="" placeholder="Confirm Password">
                             <input @click="registerLogin('register')" type="submit" name="register" value="Register">
-                            <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion</a></p>
+                            <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </form>
                     </div>
                     <div class="imgBx"><img src="../assets/notalogin.jpeg"></div>
                 </div>
             </div>
         </section>
-        <h1 v-if="error == null">HOLA</h1>
+        
     </div>    
 </template>
 

@@ -10,8 +10,8 @@ if($_GET['user']) $user = $_GET['user'];
 
 if($_GET['pass']) $pass = $_GET['pass'];
 
-if($_GET['accion'] == "login") $accion = "INSERT INTO users (user, pass) VALUES (:name, :password)";
-else if($_GET['accion'] == "register") $accion = "SELECT user, pass, token FROM users WHERE user = :user AND pass = :pass";
+if($_GET['accion'] == "login") $accion = "SELECT user, pass, token FROM users WHERE user = :user AND pass = :pass";
+else if($_GET['accion'] == "register") $accion = "INSERT INTO users (user, pass) VALUES (:user, :pass)";
 
 if( $_SERVER['REQUEST_METHOD'] == "GET" ){
     
@@ -36,7 +36,7 @@ if( $_SERVER['REQUEST_METHOD'] == "GET" ){
             }
             else echo json_encode(array("error" => "Credenciales incorrectas"));
         } catch(PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            echo json_encode(array("Error" => $e->getCode(), "Mensaje" => $e->getMessage()));
         }    
     }
 }
