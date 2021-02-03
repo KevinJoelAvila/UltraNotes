@@ -207,3 +207,13 @@ section .container.active .singinBx .imgBx
     background: transparent;
     margin-left: 15px;
 }
+
+.error1{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+    cursor:unset;
+    background-color: white !important;
+}

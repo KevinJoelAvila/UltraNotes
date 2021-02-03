@@ -7,26 +7,30 @@
                     <div class="formBx">
                         <form method="GET">
                             <h2>Iniciar Sesion</h2>
-                            <input v-model="user" required type="text" name="" placeholder="Username">
-                            <input v-model="pass" required type="password" name="" placeholder="Password">
-                            <input @click="registerLogin('login')" type="submit" name="login" value="Login">
+                            <input v-model="user" required type="text" placeholder="Username">
+                            <input v-model="pass" required type="password" placeholder="Password">
+                            
+                            <input @click="registerLogin('login')" type="submit" value="Login" href="#">
                             <p class="signup">No tienes cuenta? <a id="a" >Registrate.</a></p>
                         </form>
+                        
                     </div>
                 </div>
                 <div class="user singupBx">
                     <div class="formBx">
                         <form method="GET">
                             <h2>Registrarse</h2>
-                            <input v-model="user" type="text" name="" placeholder="Username">
-                            <input v-model="pass" type="password" name="" placeholder="Create Password">
-                            <input v-model="confirmPassword" type="password" name="" placeholder="Confirm Password">
-                            <input @click="registerLogin('register')" type="submit" name="register" value="Register">
+                            <input v-model="user" type="text" placeholder="Username">
+                            <input v-model="pass" type="password" placeholder="Create Password">
+                            <input v-model="confirmPassword" type="password" placeholder="Confirm Password">
+                            <input v-model="cache[error]" v-bind:class="{mostrar: error != null}" type="text" class="error1" readonly>
+                            <input @click="registerLogin('register')" type="submit" value="Register" href="#">
                             <p class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </form>
                     </div>
                     <div class="imgBx"><img src="../assets/notalogin.jpeg"></div>
                 </div>
+                
             </div>
         </section>
         
@@ -45,9 +49,13 @@ export default {
             name: "",
             password: "",
             confirmPassword: "",
-            error: "",
+            error: null,
             log: "login",
-            reg: "register"
+            reg: "register",
+            cache: {
+                23000: 'No existe el usuario',
+                existe: "Usuario registrado"
+            }
         }
     },
     created() {
@@ -55,6 +63,7 @@ export default {
     },
     methods: {
         registerLogin(modo) {
+            var these = this;
             //Ruta de nuestra API
             axios.get('http://localhost/prueba/ultranotes/src/api/usuarios/usuarios.php', {
                 //Con la propiedad params pasamos los datos a la API
@@ -66,19 +75,12 @@ export default {
             })
             //Captura la respuesta
             .then((response) => {
-                console.log(response.data['Error'])
+                these.error =  response.data['Error'];
             })
             //Captura los errores
             .catch(error => console.log(error));
         }
     }
-}
-
-
-
-// Espera a cargar la pagina para leer los id de la vista
-window.onload = function (){
-    
 }
 </script>
 
