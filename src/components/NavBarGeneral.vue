@@ -1,5 +1,6 @@
 <template>
     <div id="NavBar">
+        
         <slot name="contenidoIzquierda"></slot>
         <div id="contenidoCentro">
             <div class="imagenTitulo">
@@ -9,6 +10,7 @@
                 <p class="neon">UltraNotes</p>
             </div>
         </div>
+        <slot name="menu"></slot>
     </div>
 </template>
 

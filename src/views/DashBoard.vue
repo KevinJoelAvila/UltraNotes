@@ -4,6 +4,9 @@
             <template v-slot:ruta>
                 <router-link to="/"><img src="../assets/notas2.png"/></router-link>
             </template>
+            <template v-slot:menu>
+                <Menu></Menu>
+            </template>
         </NavBarGeneral>
         <ContenedorGeneral>
             <template v-slot:notas>
@@ -26,6 +29,7 @@
 import NavBarGeneral from '@/components/NavBarGeneral.vue'
 import ContenedorGeneral from '@/components/ContenedorGeneral.vue'
 import Notas from '@/components/Nota.vue'
+import Menu from '@/components/Menu.vue'
 import axios from 'axios'
 
 export default {
@@ -33,7 +37,8 @@ export default {
     components: {
         NavBarGeneral,
         ContenedorGeneral,
-        Notas
+        Notas,
+        Menu
     },
     data() {
         return{
@@ -53,6 +58,9 @@ export default {
         }
     }
 }
+
+
+
 </script>
 
 

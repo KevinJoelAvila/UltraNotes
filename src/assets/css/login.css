@@ -88,7 +88,7 @@ section .container .user .formBx
     transition: 0.5s;
 }
 
-section .container .user .formBx form h2
+section .container .user .formBx .form h2
 {
     font-size: 18px;
     font-weight: 600;
@@ -100,7 +100,7 @@ section .container .user .formBx form h2
     color: #555;
 }
 
-section .container .user .formBx form input
+section .container .user .formBx .form input
 {
     position: relative;
     width: 100%;
@@ -116,7 +116,7 @@ section .container .user .formBx form input
     font-weight: 300;
 }
 
-section .container .user .formBx form input[type="submit"]
+section .container .user .formBx .form input[type="button"]
 {
     max-width: 100px;
     background: #677eff;
@@ -128,7 +128,33 @@ section .container .user .formBx form input[type="submit"]
     transition: 0.5s;
 }
 
-section .container .user .formBx form .signup
+section .container .user .formBx .form input[type="button"]:hover
+{
+    max-width: 100px;
+    background: #04115c;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+section .container .user .formBx .form input[type="button"]:disabled,
+section .container .user .formBx .form input[type="button"]:disabled:hover
+{
+    max-width: 100px;
+    background: #676c85;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+
+
+
+section .container .user .formBx .form .signup
 {
     position: relative;
     margin-top: 20px;
@@ -139,7 +165,7 @@ section .container .user .formBx form .signup
     font-weight: 300;
 }
 
-section .container .user .formBx form .signup a
+section .container .user .formBx .form .signup a
 {
     font-weight: 600;
     text-decoration: none;

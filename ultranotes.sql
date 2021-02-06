@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-01-2021 a las 18:09:07
+-- Tiempo de generación: 04-02-2021 a las 16:47:12
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ultranotes`
+-- Base de datos: `db_ultranotes`
 --
 
 -- --------------------------------------------------------
@@ -67,7 +67,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user`, `pass`, `token`, `autosave`) VALUES
-(1, 'Kevin', '1234', 'ec9ztwt1ftis7an36d1too342', 0);
+(1, 'Kevin', '1234', 'ec9ztwt1ftis7an36d1too342', 0),
+(2, 'a', 'a', 'c22us4xztxxlvbpb6mdp6gixs', 0),
+(8, 's', 's', 'zkm4j039pfsd6l2db8yrno6mc', 0);
 
 --
 -- Disparadores `users`
@@ -95,6 +97,12 @@ DELIMITER ;
 --
 
 --
+-- Indices de la tabla `control`
+--
+ALTER TABLE `control`
+  ADD PRIMARY KEY (`token`);
+
+--
 -- Indices de la tabla `notas`
 --
 ALTER TABLE `notas`
@@ -104,9 +112,10 @@ ALTER TABLE `notas`
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user`),
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `token` (`token`);
+  ADD UNIQUE KEY `token` (`token`),
+  ADD UNIQUE KEY `user` (`user`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -122,7 +131,7 @@ ALTER TABLE `notas`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
