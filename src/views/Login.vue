@@ -22,20 +22,10 @@ export default {
         NavBarGeneral
     },
     mounted() {
-        function $(element){
-            return document.getElementById(element);
-        }
 
-        $("a").addEventListener("click", toggleForm, false);
-
-
-        $("af").addEventListener("click", toggleForm, false);
-
-        function toggleForm(){
-            var container = document.querySelector('.container');
-            container.classList.toggle('active');
-            console.log("funciona");
-        }
+    },
+    methods: {
+        
     }
 }
 </script>

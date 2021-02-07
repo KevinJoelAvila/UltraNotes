@@ -17,36 +17,34 @@ if( $_SERVER['REQUEST_METHOD'] == "GET" ){
     if($user != "" && $pass != "")
     {
         // Encriptacion de contraseña
+        $userEncrypted = hash('sha256',$user);
         $passEncrypted = hash('sha256',$pass);
         // Intenta ejecutar un consulta SQL
         try {
-            
             if($accion == "login"){
                 $consulta = (BdD::$connection)->prepare("SELECT user, pass, token FROM users WHERE user = :user AND pass = :pass");
                 $consulta->bindParam('user',$user);
                 $consulta->bindParam('pass',$passEncrypted);
                 $consulta->execute();
-                $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                $result = $consulta->fetch(PDO::FETCH_ASSOC);
+                // Si el array no esta vacio, significa que existe el usuario
                 if (!empty($result))
                 {
-                    foreach($result as $fila) {
-                        $resposta = $fila;
-                    }
-                    echo json_encode(array("Respuesta" => $resposta));
+                    //setcookie ( "user" , $userEncrypted , time()+86400, "localhost", "/", false, true );
+                    //setcookie ( "pass" , $passEncrypted , time()+86400, "localhost", "/", false, true );
+                    //setcookie ( "token" , $result['token'] , time()+86400, "localhost", "/", false, true );
+                    echo json_encode(array("Respuesta" => "Correcto"));
                 }
                 else echo json_encode(array("Error" => "1"));
             } else if($accion == "register"){
-                
                 $consulta = (BdD::$connection)->prepare("SELECT user, pass, token FROM users WHERE user = :user AND pass = :pass");
                 $consulta->bindParam('user',$user);
                 $consulta->bindParam('pass',$passEncrypted);
                 $consulta->execute();
-                $result = $consulta->fetchAll(PDO::FETCH_ASSOC);
+                $result = $consulta->fetch(PDO::FETCH_ASSOC);
+                // SI devuelve resultados el usuario no se registra
                 if (!empty($result))
                 {
-                    foreach($result as $fila) {
-                        $resposta = $fila;
-                    }
                     echo json_encode(array("Error" => "2"));
                 }
                 else {
