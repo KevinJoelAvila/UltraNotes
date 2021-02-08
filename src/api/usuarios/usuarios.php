@@ -1,6 +1,6 @@
 <?php
 require('../BdConnect.php');
-
+//header('Access-Control-Allow-Credentials: true');
 // Captura el envio de datos al php
 $data = json_decode(file_get_contents("php://input"));
 
@@ -17,7 +17,6 @@ if( $_SERVER['REQUEST_METHOD'] == "GET" ){
     if($user != "" && $pass != "")
     {
         // Encriptacion de contraseña
-        $userEncrypted = hash('sha256',$user);
         $passEncrypted = hash('sha256',$pass);
         // Intenta ejecutar un consulta SQL
         try {
@@ -33,7 +32,7 @@ if( $_SERVER['REQUEST_METHOD'] == "GET" ){
                     //setcookie ( "user" , $userEncrypted , time()+86400, "localhost", "/", false, true );
                     //setcookie ( "pass" , $passEncrypted , time()+86400, "localhost", "/", false, true );
                     //setcookie ( "token" , $result['token'] , time()+86400, "localhost", "/", false, true );
-                    echo json_encode(array("Respuesta" => "Correcto"));
+                    echo json_encode(array("Respuesta" => array("usuario" => $user, "pass" => $passEncrypted, "token" => $result['token'])));
                 }
                 else echo json_encode(array("Error" => "1"));
             } else if($accion == "register"){
@@ -52,6 +51,7 @@ if( $_SERVER['REQUEST_METHOD'] == "GET" ){
                     $consulta->bindParam('user',$user);
                     $consulta->bindParam('pass',$passEncrypted);
                     $consulta->execute();
+                    
                     echo json_encode(array("Respuesta" => "Correcto"));
                 }
             }

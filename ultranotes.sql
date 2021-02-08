@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `control`
 --
 
+DROP TABLE IF EXISTS `control`; 
 CREATE TABLE `control` (
   `token` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `peticiones` int(11) NOT NULL DEFAULT 0,
@@ -41,6 +42,7 @@ CREATE TABLE `control` (
 -- Estructura de tabla para la tabla `notas`
 --
 
+DROP TABLE IF EXISTS `notas`; 
 CREATE TABLE `notas` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -54,6 +56,7 @@ CREATE TABLE `notas` (
 -- Estructura de tabla para la tabla `users`
 --
 
+DROP TABLE IF EXISTS `users`; 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -66,10 +69,6 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `user`, `pass`, `token`, `autosave`) VALUES
-(1, 'Kevin', '1234', 'ec9ztwt1ftis7an36d1too342', 0),
-(2, 'a', 'a', 'c22us4xztxxlvbpb6mdp6gixs', 0),
-(8, 's', 's', 'zkm4j039pfsd6l2db8yrno6mc', 0);
 
 --
 -- Disparadores `users`

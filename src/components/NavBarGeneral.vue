@@ -10,7 +10,9 @@
                 <p class="neon">UltraNotes</p>
             </div>
         </div>
-        <slot name="menu"></slot>
+        <div class="menu">
+            <slot name="menu"></slot>
+        </div>
     </div>
 </template>
 
@@ -25,23 +27,18 @@ export default {
 
 <style scoped>
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-}
+
 
 #NavBar
 {
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
     background: rgba(155, 133, 133, 0.623);
     width: 100%;
     height: 8vh;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* overflow: hidden; */
 }
@@ -52,11 +49,16 @@ export default {
 }
 
 .textoTitulo {
+    align-self: flex-end;
     margin-top: 7px;
     margin-left: 10px;
     font-size: 40px;
     font-family: 'Courier New';
     color: white;
+}
+
+.menu{
+
 }
 
 @font-face {

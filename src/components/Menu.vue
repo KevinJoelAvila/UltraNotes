@@ -15,7 +15,7 @@
                     <li>Profile & status</li>
                     <li>Notification</li>
                     <li>Help</li>
-                    <li>Log out</li>
+                    <li><router-link to="/">Cerrar Sesion</router-link></li>
                 </ul>
             </div>
         </div>

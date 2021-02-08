@@ -26,7 +26,7 @@
                             <input v-model="cache[data.Error]" v-bind:class="{mostrar: data.Error != null}" type="text" class="error1" readonly>
                             <p v-if="pass != confirmPassword">Las contraseñas no coinciden</p>
                             <input :disabled="pass != confirmPassword" @click="registerLogin('register')" type="button" value="Register">
-                            <p @click="pass = '', user = '', toggleForm()" class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
+                            <p @click="pass = '', user = '', confirmPassword = '', toggleForm()" class="signup">Ya tienes cuenta? <a id="af" >Inicia Sesion.</a></p>
                         </div>
                     </div>
                     <div class="imgBx"><img src="../assets/notalogin.jpeg"></div>
@@ -40,6 +40,7 @@
 
 <script>
 import axios from 'axios'
+//axios.defaults.withCredentials = true;
 
 export default {
     name: 'VentanaLogin',
@@ -92,6 +93,9 @@ export default {
         },
         redireccion(sitio){
             if(this.data.Respuesta != null)
+                document.cookie = "usuario="+this.data.Respuesta.usuario+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+                document.cookie = "pass="+this.data.Respuesta.pass+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+                document.cookie = "token="+this.data.Respuesta.token+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
                 this.$router.push(sitio);
         },
         // Deslizar vista de login o registro
